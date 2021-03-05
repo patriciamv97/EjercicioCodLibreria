@@ -13,14 +13,24 @@ public class Main {
         InterfaceMetodosComunes salidaVentana;
         InterfaceMetodosComunes salidaImpresora;
 
-        miSalida = FactoriaDeSalidas.getProducto(FactoriaDeSalidas.CONSOLA, "Visualización por consola completa");
-        miSalida.visualizar();
+        miSalida = FactoriaDeSalidas.getProductoTipoSalida(FactoriaDeSalidas.CONSOLA, "Visualización por consola completa");
+        miSalida.comunicar();
 
-        salidaVentana = FactoriaDeSalidas.getProducto(FactoriaDeSalidas.VENTANA, "Visualización por ventana completa");
-        salidaVentana.visualizar();
+        salidaVentana = FactoriaDeSalidas.getProductoTipoSalida(FactoriaDeSalidas.VENTANA, "Visualización por ventana completa");
+        salidaVentana.comunicar();
 
-        salidaImpresora=FactoriaDeSalidas.getProducto(FactoriaDeSalidas.IMPRESORA,"Impresión completa.");
-        salidaImpresora.visualizar();
+        salidaImpresora=FactoriaDeSalidas.getProductoTipoSalida(FactoriaDeSalidas.IMPRESORA,"Impresión completa.");
+        salidaImpresora.comunicar();
+
+        InterfaceMetodosComunes miEntrada;
+        InterfaceMetodosComunes entradaConsola;
+        InterfaceMetodosComunes entradaVentana;
+
+        entradaConsola=FactoriaDeSalidas.getProductoTipoEntrada(FactoriaDeSalidas.CONSOLA,"Entrada por consola : ");
+        entradaConsola.comunicar();
+
+        entradaVentana=FactoriaDeSalidas.getProductoTipoEntrada(FactoriaDeSalidas.VENTANA,"Entrada  por ventana :");
+        entradaVentana.comunicar();
 		/*
 		Consola consola = new Consola("Hola");
         consola.visualizar();
